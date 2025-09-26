@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOMM3 Templates</title>
+    <meta name="description" content="Personal gallery of Heroes of Might and Magic III templates.">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>HOMM3 Templates</h1>
+      <p class="subtitle">Browse and download personal templates</p>
+    </header>
+
+    <main class="container">
+      <section class="controls" aria-label="Filters and search">
+        <div class="control-row">
+          <input id="searchInput" class="search" type="search" placeholder="Search templates..." aria-label="Search templates">
+          <select id="sortSelect" aria-label="Sort templates">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="name-asc">Name A–Z</option>
+            <option value="name-desc">Name Z–A</option>
+          </select>
+          <button id="themeToggle" class="btn" type="button" aria-label="Toggle theme">Toggle theme</button>
+        </div>
+        <div id="tagFilters" class="tags" aria-label="Tag filters"></div>
+      </section>
+
+      <section id="gallery" class="gallery" aria-live="polite"></section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card" tabindex="0">
+        <div class="card-image-wrap">
+          <img class="card-image" alt="" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title"></h3>
+          <p class="card-meta"></p>
+          <p class="card-desc"></p>
+          <div class="card-actions">
+            <a class="btn btn-primary" target="_blank" rel="noopener" download>Download</a>
+            <button class="btn btn-secondary btn-details" type="button">Details</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <dialog id="detailModal" class="modal">
+      <form method="dialog" class="modal-inner">
+        <header class="modal-header">
+          <h2 id="modalTitle">Template</h2>
+          <button class="btn btn-icon" value="cancel" aria-label="Close">✕</button>
+        </header>
+        <div class="modal-content">
+          <img id="modalImage" alt="" />
+          <div class="modal-info">
+            <p id="modalDesc"></p>
+            <ul id="modalMeta" class="meta-list"></ul>
+            <div class="modal-actions">
+              <a id="modalDownload" class="btn btn-primary" target="_blank" rel="noopener" download>Download</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <footer class="site-footer">
+      <small>Made for HOMM3 fans • <a href="https://www.homm3.com" target="_blank" rel="noopener">Unofficial</a></small>
+    </footer>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+  </html>
+
+
